@@ -1,7 +1,14 @@
 
 FROM rocker/shiny:latest
 
-RUN R -e 'install.packages(c("bslib","ggplot2","dplyr","DT","rpart","rpart.plot","readr","scales"), repos="https://cloud.r-project.org")'
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    libuv1 \
+    libcurl4-openssl-dev \
+    libssl-dev \
+    libxml2-dev \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN R -e 'install.packages(c("bslib","ggplot2","dplyr","DT","rpart","rpart.plot","readr","scales","fs"), repos="https://cloud.r-project.org")'
 
 WORKDIR /srv/shiny-server
 
