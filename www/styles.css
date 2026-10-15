@@ -1,0 +1,128 @@
+/* ==========================================================================
+   Supermarket Sales Insights - local stylesheet
+   Theme colours (exact):
+     Primary green      #4F7D32
+     Light golden yellow #FFD16A
+     Bright yellow       #F5B52E
+     Red-orange          #D9361E
+   ========================================================================== */
+
+:root {
+  --green: #4F7D32;
+  --green-dark: #3C6026;
+  --gold: #FFD16A;
+  --yellow: #F5B52E;
+  --red: #D9361E;
+  --ink: #26331F;
+  --muted: #5F6B58;
+  --line: #E6E1CF;
+  --paper: #FBF9F1;
+  --card: #FFFFFF;
+}
+
+body { background: var(--paper); color: var(--ink); }
+
+/* ---------- Sidebar ---------- */
+.bslib-sidebar-layout > .sidebar { border-right: none; }
+.brand { padding: 4px 2px 12px 2px; border-bottom: 1px solid rgba(255,255,255,.25); margin-bottom: 12px; }
+.brand h1 { font-size: 1.2rem; font-weight: 700; margin: 0 0 4px 0; color: #fff; line-height: 1.25; }
+.brand p  { font-size: .8rem; margin: 0; color: var(--gold); line-height: 1.35; }
+
+.side-heading { font-size: .72rem; letter-spacing: .08em; text-transform: uppercase;
+                color: var(--gold); margin: 14px 0 6px 0; font-weight: 700; }
+
+/* Navigation (radio buttons styled as a menu) */
+.nav-radio .shiny-options-group { display: flex; flex-direction: column; gap: 2px; }
+.nav-radio .radio, .nav-radio .form-check { margin: 0; padding: 0; }
+.nav-radio .radio label, .nav-radio .form-check label { display: block; width: 100%; margin: 0; }
+.nav-radio input[type=radio] { position: absolute; opacity: 0; pointer-events: none; }
+.nav-radio .radio span, .nav-radio .form-check span {
+  display: block; padding: .5rem .75rem; border-radius: 10px; color: #fff;
+  cursor: pointer; font-size: .92rem; transition: background .15s;
+}
+.nav-radio .radio span:hover, .nav-radio .form-check span:hover { background: rgba(255,255,255,.14); }
+.nav-radio input[type=radio]:checked + span { background: var(--gold); color: var(--ink); font-weight: 700; }
+.nav-radio .fa, .nav-radio .fas { width: 1.4em; text-align: center; margin-right: 4px; }
+
+/* Filters */
+.filter-group { margin-bottom: 8px; }
+.filter-group summary { cursor: pointer; font-weight: 600; font-size: .86rem; color: #fff; padding: 3px 0; }
+.sidebar .form-group, .sidebar .shiny-input-container { margin-bottom: 4px; width: 100%; }
+.sidebar .checkbox, .sidebar .form-check { margin-bottom: 0; }
+.sidebar .form-check-label, .sidebar .checkbox label span { font-size: .84rem; color: #fff; }
+.sidebar input[type=checkbox] { accent-color: var(--gold); }
+.sidebar .form-control { font-size: .85rem; }
+.record-count { font-size: .8rem; color: var(--gold); margin: 8px 0; }
+
+.btn-gold { background: var(--gold); color: var(--ink); border: none; font-weight: 700; width: 100%; }
+.btn-gold:hover, .btn-gold:focus { background: var(--yellow); color: var(--ink); }
+
+/* ---------- Page header ---------- */
+.page-head { margin: 2px 0 14px 0; }
+.page-head h2 { font-size: 1.5rem; font-weight: 700; color: var(--green); margin: 0; }
+.page-head p  { color: var(--muted); margin: 4px 0 0 0; font-size: .92rem; }
+
+/* ---------- KPI cards ---------- */
+.kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin-bottom: 16px; }
+.kpi { background: var(--card); border-radius: 14px; padding: 14px 16px; box-shadow: 0 1px 4px rgba(38,51,31,.10);
+       border-top: 5px solid var(--green); }
+.kpi-gold   { border-top-color: var(--gold);   background: linear-gradient(180deg, rgba(255,209,106,.22), var(--card) 70%); }
+.kpi-yellow { border-top-color: var(--yellow); }
+.kpi-red    { border-top-color: var(--red); }
+.kpi-label { font-size: .75rem; color: var(--muted); text-transform: uppercase; letter-spacing: .05em; font-weight: 600; }
+.kpi-value { font-size: 1.65rem; font-weight: 700; color: var(--ink); line-height: 1.2; margin: 2px 0; word-break: break-word; }
+.kpi-hint  { font-size: .75rem; color: var(--muted); }
+
+/* ---------- Cards and grids ---------- */
+.grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 430px), 1fr)); gap: 16px; margin-bottom: 16px; }
+.dash-card { background: var(--card); border-radius: 14px; box-shadow: 0 1px 4px rgba(38,51,31,.10);
+             margin-bottom: 16px; overflow: hidden; }
+.grid-2 > .dash-card { margin-bottom: 0; }
+.dash-card-head { padding: 10px 16px; border-bottom: 1px solid var(--line); display: flex; align-items: baseline;
+                  justify-content: space-between; gap: 8px; flex-wrap: wrap; }
+.dash-card-title { font-weight: 700; color: var(--green); font-size: .98rem; }
+.dash-card-sub { font-size: .75rem; color: var(--muted); }
+.dash-card-body { padding: 12px 16px 14px 16px; }
+
+/* ---------- Notes and states ---------- */
+.note-box { background: rgba(255,209,106,.28); border-left: 5px solid var(--yellow); border-radius: 8px;
+            padding: 10px 14px; margin-bottom: 16px; font-size: .9rem; }
+.warn-box { background: rgba(217,54,30,.08); border-left: 5px solid var(--red); border-radius: 8px;
+            padding: 10px 14px; margin-bottom: 16px; font-size: .9rem; }
+.ok-box   { background: rgba(79,125,50,.10); border-left: 5px solid var(--green); border-radius: 8px;
+            padding: 10px 14px; margin-bottom: 12px; font-size: .9rem; }
+.note-box p:last-child, .warn-box p:last-child { margin-bottom: 0; }
+.insight-list { margin: 0; padding-left: 1.1rem; }
+.insight-list li { margin-bottom: 6px; }
+
+.shiny-output-error-validation { color: var(--ink); background: rgba(255,209,106,.28); border-left: 5px solid var(--yellow);
+                                 border-radius: 8px; padding: 12px 14px; font-weight: 500; font-size: .9rem; }
+.shiny-output-error:not(.shiny-output-error-validation) { color: var(--red); }
+.recalculating { opacity: .45; transition: opacity .2s; }
+
+.busy-pill { position: fixed; top: 12px; right: 16px; z-index: 2000; background: var(--green); color: #fff;
+             padding: 5px 14px; border-radius: 20px; font-size: .8rem; box-shadow: 0 2px 8px rgba(0,0,0,.2); }
+
+/* ---------- Controls inside pages ---------- */
+.control-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px 18px; align-items: end; }
+.btn-primary { background: var(--green); border-color: var(--green); }
+.btn-primary:hover, .btn-primary:focus { background: var(--green-dark); border-color: var(--green-dark); }
+.btn-outline-primary { color: var(--green); border-color: var(--green); }
+.btn-outline-primary:hover { background: var(--green); border-color: var(--green); color: #fff; }
+.dl-row { display: flex; flex-wrap: wrap; gap: 8px; margin: 8px 0 4px 0; }
+.irs--shiny .irs-bar, .irs--shiny .irs-single, .irs--shiny .irs-handle { background: var(--green); border-color: var(--green); }
+.irs--shiny .irs-single { background: var(--green); }
+
+/* ---------- Tables ---------- */
+table.dataTable thead th { background: var(--green); color: #fff; border-bottom: none !important; font-size: .82rem; }
+table.dataTable tbody td { font-size: .84rem; }
+.dataTables_wrapper { font-size: .85rem; }
+.shiny-table, .table { font-size: .88rem; }
+.table > thead > tr > th { background: var(--green); color: #fff; }
+
+/* ---------- Small screens ---------- */
+@media (max-width: 576px) {
+  .kpi-value { font-size: 1.35rem; }
+  .page-head h2 { font-size: 1.25rem; }
+  .dash-card-body { padding: 10px; }
+}
